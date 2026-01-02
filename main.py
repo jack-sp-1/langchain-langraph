@@ -3,8 +3,13 @@ import os
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
+from langchain.agents import create_agent
+from langchain.tools import tool
+from langchain_core.messages import HumanMessage
 
 
+def search(query:str)->str:
+    print(f"searching for ")
 
 load_dotenv()
 def main():
