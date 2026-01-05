@@ -20,9 +20,7 @@ def search(query:str)->str:
     print(f"searching for {query}")
     return tavily.search(query=query)
 
-llm = ChatOllama(model="gpt-oss:latest",temperature = 0.7,
-    max_tokens = 100,
-    context_window=8000)
+llm = ChatOpenAI(model="gpt-5",temperature = 0)
 tools = [search]
 agent = create_agent(model=llm,tools=tools)
     

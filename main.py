@@ -30,8 +30,8 @@ Musk's political activities, views, and statements have made him a polarizing fi
     1.a short summary
     2. two interesting facts about them"""
     summary = PromptTemplate(template=summary_template,input_variables=["information"])
-    #llm = ChatOpenAI(temperature=0,model="gpt-5")
-    llm = ChatOllama(temperature=0,model="gemma3:270m")
+    llm = ChatOpenAI(temperature=0,model="gpt-5")
+    #llm = ChatOllama(temperature=0,model="gemma3:270m")
     chain = summary|llm
     response = chain.invoke(input={"information":information})
     print(response.content)
